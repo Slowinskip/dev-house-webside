@@ -1,0 +1,17 @@
+@import "./settings.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Kanit", sans-serif;
+}
+
+section {
+  margin: 5rem 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
