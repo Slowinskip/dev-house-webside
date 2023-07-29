@@ -13,24 +13,27 @@
       background-color: black;
       display: flex;
       flex-direction: column;
-      justify-content: end;
+      position: relative;
       align-items: center;
-      text-align: center;
 
       @media (max-width: 768px) {
         align-items: center;
       }
-      div {
-        margin: 5rem 0rem;
 
-        h1 {
-          font-weight: 900;
-          color: white;
-          font-family: $font_banner;
-          font-size: 3rem;
-          @media (max-width: 1045px) {
-            font-size: 2rem;
-          }
+      h1 {
+        // transform: translateY(50%);
+        font-weight: 900;
+        position: absolute;
+        top: 60%;
+        @media (max-width: 768px) {
+          top: 70%;
+        }
+
+        color: white;
+        font-family: $font_banner;
+        font-size: 3rem;
+        @media (max-width: 1045px) {
+          font-size: 2rem;
         }
       }
     }
