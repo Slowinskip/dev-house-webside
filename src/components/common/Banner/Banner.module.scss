@@ -1,2 +1,43 @@
 @import "../../../styles/settings.scss";
 @import "../../../styles/global.scss";
+
+.bannerDiv {
+  height: 100vh;
+  z-index: 98;
+  position: relative;
+
+  .banner_row {
+    height: 100%;
+
+    .banner_bg_1 {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: center;
+      text-align: center;
+
+      @media (max-width: 768px) {
+        align-items: center;
+      }
+      div {
+        margin: 5rem 0rem;
+
+        h1 {
+          font-weight: 900;
+          color: white;
+          font-family: $font_banner;
+          font-size: 3rem;
+          @media (max-width: 1045px) {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    .banner_bg_2 {
+      background-image: url("house.webp");
+      background-position: center;
+    }
+  }
+}
