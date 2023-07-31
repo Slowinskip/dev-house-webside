@@ -25,7 +25,8 @@
       height: 80px;
     }
   }
-  .menuList {
+  .menuList,
+  .mobileMenu {
     // margin: 2rem 6rem;
     display: flex;
     flex-direction: column;
@@ -38,15 +39,44 @@
 
     li {
       list-style: none;
-    }
+      position: relative;
+      &:hover {
+        .menu_link::after {
+          width: 100%;
+        }
+      }
 
-    .menu_link {
-      color: white;
-      text-decoration: none;
-      font-size: 2rem;
+      .menu_link {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        font-size: 2rem;
+      }
       @media (max-width: 768px) {
         font-size: 1.5rem;
       }
+    }
+    .menu_link::after {
+      content: "";
+      background-color: blue;
+      min-height: 5px;
+      width: 0%;
+      opacity: 1;
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99;
+      transition: 0.5s all;
+    }
+  }
+  .mobileBtn {
+    border: none;
+    background-color: transparent;
+
+    .mobileBtn_icon {
+      color: white;
+      font-size: 3rem;
     }
   }
 }
