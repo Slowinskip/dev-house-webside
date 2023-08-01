@@ -12,6 +12,17 @@
   .bannerBg_1 {
     background-color: black;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .bannerTitle {
+      color: #a49393;
+      text-align: center;
+      font-family: $font_banner;
+      // padding-top: 10rem;
+      padding: 10rem 1rem 0 1rem;
+    }
   }
   .bannerBg_2 {
     height: 100%;

@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Banner />
+      <Banner title="Design your home with us!" />
     </>
   );
 }

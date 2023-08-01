@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { HiMenu } from "react-icons/hi";
 const Navbar = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [scroll, setScroll] = useState(false);
+  console.log(scroll, width);
+  window.addEventListener("resize", () => {
+    setWidth(window.innerWidth);
+  });
+
+  window.addEventListener("scroll", (e) => {
+    if (window.scrollY > 10) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  });
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -28,7 +44,18 @@ const Navbar = () => {
 
   return (
     <Container>
-      <Row className={styles.navbarContainer}>
+      <Row
+        className={styles.navbarContainer}
+        style={{
+          flexDirection: scroll || width < 800 ? "row" : "column",
+          justifyContent: scroll || width < 800 ? "space-between" : "",
+          alignItems: scroll || width < 800 ? "center" : "",
+          width: scroll || width < 800 ? "100%" : "auto",
+          top: scroll || width < 800 ? "8%" : "3rem",
+          left: scroll || width < 800 ? "51%" : "4%",
+          transform: scroll || width < 800 ? "translate(-50%, -50%)" : "",
+        }}
+      >
         <Col>
           {" "}
           <motion.h1
@@ -39,28 +66,32 @@ const Navbar = () => {
             Dev<span>House</span>
           </motion.h1>
         </Col>
-        <motion.Col
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className={"" + styles.links_container}
-        >
-          <motion.li variants={item}>
-            <Link variants={item} className={styles.links} href="/">
-              Build with Us
-            </Link>
-          </motion.li>
-          <motion.li variants={item}>
-            <Link className={styles.links} href="/">
-              Develop with Us
-            </Link>
-          </motion.li>
-          <motion.li variants={item}>
-            <Link variants={item} className={styles.links} href="/">
-              About
-            </Link>
-          </motion.li>
-        </motion.Col>
+        {width > 800 && !scroll ? (
+          <motion.Col
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className={"" + styles.links_container}
+          >
+            <motion.li variants={item}>
+              <Link variants={item} className={styles.links} href="/">
+                Build with Us
+              </Link>
+            </motion.li>
+            <motion.li variants={item}>
+              <Link className={styles.links} href="/">
+                Develop with Us
+              </Link>
+            </motion.li>
+            <motion.li variants={item}>
+              <Link variants={item} className={styles.links} href="/">
+                About
+              </Link>
+            </motion.li>
+          </motion.Col>
+        ) : (
+          <HiMenu className={styles.mobileMenuBtn} />
+        )}
       </Row>{" "}
     </Container>
   );
