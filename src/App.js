@@ -1,7 +1,12 @@
 import "./App.css";
+import Navbar from "./components/layout/Navbar/Navbar";
 
 function App() {
-  return <>Dev House </>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 
 export default App;
