@@ -11,8 +11,9 @@
   background-color: black;
   h1 {
     color: #67595e;
+    font-weight: 900;
+
     span {
-      font-weight: 900;
       color: #a49393;
     }
   }
@@ -21,14 +22,36 @@
     display: flex;
     flex-direction: column;
     margin-top: 3rem;
-    margin-left: 2rem;
 
+    li {
+      list-style: none;
+      margin: 0.5rem 0;
+
+      &:hover {
+        .links::after {
+          width: 100%;
+        }
+      }
+    }
     .links {
       text-decoration: none;
       font-size: 1.4rem;
       font-weight: 600;
       color: white;
-      margin: 0.4rem 0;
+      position: relative;
+    }
+    .links::after {
+      content: "";
+      background-color: #a49393;
+      height: 4px;
+      width: 0%;
+      opacity: 1;
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      transition: 0.3s all;
     }
   }
 }
