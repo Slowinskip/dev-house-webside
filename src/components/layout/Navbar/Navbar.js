@@ -4,9 +4,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
+import { BiExit } from "react-icons/bi";
 const Navbar = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [scroll, setScroll] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
   console.log(scroll, width);
   window.addEventListener("resize", () => {
     setWidth(window.innerWidth);
@@ -90,7 +93,45 @@ const Navbar = () => {
             </motion.li>
           </motion.Col>
         ) : (
-          <HiMenu className={styles.mobileMenuBtn} />
+          <div className={styles.mobileContainer}>
+            <HiMenu
+              onClick={() => setShowMenu(!showMenu)}
+              className={styles.mobileMenuBtn}
+            />
+            <motion.div
+              animate={{ x: showMenu ? 0 : -330 }}
+              transition={{ duration: 1 }}
+              className={styles.mobileMenu}
+            >
+              {" "}
+              <BiExit
+                onClick={() => setShowMenu(!showMenu)}
+                className={styles.mobileMenuBtn}
+              />
+              <motion.Col
+                variants={container}
+                initial="hidden"
+                animate="show"
+                className={"" + styles.links_container}
+              >
+                <motion.li variants={item}>
+                  <Link variants={item} className={styles.links} href="/">
+                    Build with Us
+                  </Link>
+                </motion.li>
+                <motion.li variants={item}>
+                  <Link className={styles.links} href="/">
+                    Develop with Us
+                  </Link>
+                </motion.li>
+                <motion.li variants={item}>
+                  <Link variants={item} className={styles.links} href="/">
+                    About
+                  </Link>
+                </motion.li>
+              </motion.Col>
+            </motion.div>
+          </div>
         )}
       </Row>{" "}
     </Container>
