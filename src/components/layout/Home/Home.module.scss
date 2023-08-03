@@ -1,0 +1,65 @@
+@import "../../../styles/settings.scss";
+@import "../../../styles/global.scss";
+
+.homeSection {
+  background-color: white;
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    @media (max-width: 1000px) {
+      justify-content: center;
+    }
+
+    .informationDiv {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 98;
+      h1 {
+        font-weight: 700;
+      }
+      .spanDev {
+        color: #67595e;
+        font-weight: 900;
+      }
+      .spanHouse {
+        color: #a49393;
+        font-weight: 900;
+      }
+    }
+    .bgTitle {
+      position: absolute;
+      top: 1rem;
+      margin: 0;
+      padding: 0;
+      opacity: 0.4;
+      @media (max-width: 1000px) and (min-width: 700px) {
+        top: 3rem;
+      }
+      @media (max-width: 699px) and (min-width: 1px) {
+        top: 8rem;
+      }
+
+      .devLogo {
+        font-size: 10rem;
+        color: #67595e;
+        font-weight: 900;
+        @media (max-width: 1000px) and (min-width: 700px) {
+          font-size: 8rem;
+        }
+        @media (max-width: 699px) and (min-width: 1px) {
+          font-size: 3rem;
+        }
+
+        span {
+          color: #a49393;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}

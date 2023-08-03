@@ -11,14 +11,6 @@
   // top: 8%;
   // left: 51%;
   // transform: translate(-50%, -50%);
-  h1 {
-    color: #67595e;
-    font-weight: 900;
-
-    span {
-      color: #a49393;
-    }
-  }
   @media (max-width: 800px) {
     width: 100%;
     flex-direction: row;

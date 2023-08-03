@@ -10,7 +10,7 @@ const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
-  console.log(scroll, width);
+  console.log(showMenu);
   window.addEventListener("resize", () => {
     setWidth(window.innerWidth);
   });
@@ -65,6 +65,7 @@ const Navbar = () => {
             initial={{ x: 200, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
+            className={styles.devLogo}
           >
             Dev<span>House</span>
           </motion.h1>
@@ -99,7 +100,7 @@ const Navbar = () => {
               className={styles.mobileMenuBtn}
             />
             <motion.div
-              animate={{ x: showMenu ? 0 : -330 }}
+              animate={{ x: showMenu ? -330 : 0 }}
               transition={{ duration: 1 }}
               className={styles.mobileMenu}
             >

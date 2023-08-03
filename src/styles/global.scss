@@ -7,11 +7,21 @@
 }
 
 section {
-  margin: 5rem 0;
+  padding: 10rem 0;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.devLogo {
+  color: #67595e;
+  font-weight: 900;
+
+  span {
+    color: #a49393;
+    font-weight: 900;
+  }
 }
