@@ -22,7 +22,10 @@ export const Home = () => {
           </Col>
         </Container>
       </section>
-      <Project />
+      <section>
+        {" "}
+        <Project />
+      </section>
     </>
   );
 };

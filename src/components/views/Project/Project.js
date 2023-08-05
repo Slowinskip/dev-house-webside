@@ -4,9 +4,10 @@ import styles from "./Project.module.scss";
 const Project = () => {
   return (
     <section className={styles.sectionProjects}>
-      <Container>
-        <Row className={styles.row}>
-          <Col className={styles.project}>
+      <Container className={styles.container}>
+        <h1 className={styles.titleProject}>Projects</h1>
+        <div className={styles.row}>
+          <Col xs={10} md={5} lg={4} className={styles.project}>
             <img
               className={styles.project_img}
               alt="img"
@@ -17,7 +18,7 @@ const Project = () => {
               suscipit lobortis risus, in facilisis magna.
             </p>
           </Col>
-          <Col className={styles.project}>
+          <Col xs={10} md={5} lg={4} className={styles.project}>
             {" "}
             <img
               className={styles.project_img}
@@ -29,7 +30,7 @@ const Project = () => {
               suscipit lobortis risus, in facilisis magna.
             </p>
           </Col>
-          <Col className={styles.project}>
+          <Col xs={10} md={5} lg={4} className={styles.project}>
             {" "}
             <img
               className={styles.project_img}
@@ -41,7 +42,7 @@ const Project = () => {
               suscipit lobortis risus, in facilisis magna.
             </p>
           </Col>
-        </Row>
+        </div>
       </Container>
     </section>
   );
