@@ -10,7 +10,6 @@ const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
-  console.log(showMenu);
   window.addEventListener("resize", () => {
     setWidth(window.innerWidth);
   });
@@ -100,7 +99,7 @@ const Navbar = () => {
               className={styles.mobileMenuBtn}
             />
             <motion.div
-              animate={{ x: showMenu ? -330 : 0 }}
+              animate={{ x: showMenu ? -330 : 0, opacity: showMenu ? 1 : 0 }}
               transition={{ duration: 1 }}
               className={styles.mobileMenu}
             >

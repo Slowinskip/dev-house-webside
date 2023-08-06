@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container } from "react-bootstrap";
 import styles from "./Home.module.scss";
 import Project from "../../views/Project/Project";
+import BuildInformation from "../../views/BuildInformation/BuildInformation";
 export const Home = () => {
   return (
     <>
@@ -26,6 +27,7 @@ export const Home = () => {
         {" "}
         <Project />
       </section>
+      <BuildInformation />
     </>
   );
 };
